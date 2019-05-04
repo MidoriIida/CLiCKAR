@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1554775632017.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2158774336",
+    "id" : "ABA9B43D",
+    "lastKnownWriteTime" : 1554775793,
+    "last_content_update" : 1554775793890,
+    "path" : "~/Documents/Suzuki_lab/Amplicon/CLICKAR/2019_04_ver/CLiCKAR_v1.2.1/functions_makecigar.r",
+    "project_path" : "functions_makecigar.r",
+    "properties" : {
+        "cursorPosition" : "6,20",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

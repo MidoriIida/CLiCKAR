@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1543486795594.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "229|31|231|8|\n232|34|243|8|\n246|39|271|6|\n273|41|293|6|\n295|37|339|6|\n341|100|344|8|\n346|35|353|6|\n356|31|358|8|\n359|33|385|8|\n397|28|404|6|\n406|45|424|6|\n426|54|437|6|\n439|56|469|6|\n473|35|480|6|\n482|46|485|8|\n487|41|490|6|\n492|41|494|6|\n497|31|499|8|\n500|34|525|8|\n528|15|530|6|\n532|15|534|6|\n",
+    "hash" : "2127258391",
+    "id" : "B463D7E6",
+    "lastKnownWriteTime" : 1556864434,
+    "last_content_update" : 1556864434992,
+    "path" : "~/Documents/Suzuki_lab/Amplicon/CLICKAR/2019_04_ver/CLiCKAR_v1.2.1/app.R",
+    "project_path" : "app.R",
+    "properties" : {
+        "cursorPosition" : "35,17",
+        "scrollLine" : "34"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
