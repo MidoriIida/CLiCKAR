@@ -7,7 +7,7 @@ library(gridExtra)
 library(grid)
 library(openxlsx)
 library(shinyjs) 
-options(shiny.maxRequestSize = 200*1024^2)
+options(shiny.maxRequestSize = 400*1024^2)
 # options(repos = BiocInstaller::biocinstallRepos())
 # getOption("repos")
 
