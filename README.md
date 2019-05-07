@@ -1,6 +1,7 @@
 # CLiCKAR
 
-![エビフライトライアングル](http://i.imgur.com/Jjwsc.jpg "サンプル")
+![Table2](www/sample_qery_table.png)
+
 A comma-separated values (csv) data sheet is needed to run CLiCKAR. Query table requires gene name (Gene), 
 sample name for individual crispant (Sample_name), forward (FWD_primer) 
 and reverse (REV_primer) primer sequences with custom barcoded sequence (underlined) 
