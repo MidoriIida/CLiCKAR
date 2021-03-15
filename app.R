@@ -6,7 +6,7 @@ library(ggplot2)
 library(gridExtra)
 library(grid)
 library(openxlsx)
-library(shinyjs) 
+# library(shinyjs) 
 options(shiny.maxRequestSize = 400*1024^2)
 # options(repos = BiocInstaller::biocinstallRepos())
 # getOption("repos")
@@ -27,10 +27,10 @@ shinyApp(
       
       tabPanel("Step 1",
                sidebarPanel(
-                 useShinyjs(), #new!
+                 #useShinyjs(), #new!
                  p("Step 1 procedure", style = "font-family: 'Helvetica'; font-size: 16pt"),
                  
-                 p("0) If necessary, download sample data files from ???get sample!??? button below."),
+                 p("0) If necessary, download sample data files from 'get sample!' button below."),
                  downloadButton("CLiCKAR_sample.zip", "get sample!"),
                  br(), br(), br(),
                  
@@ -48,11 +48,11 @@ shinyApp(
                            )),
                  
                  
-                 p("2) Click ???CLiCKAR submit!??? button below."),
+                 p("2) Click 'CLiCKAR submit!' button below."),
                  actionButton("go", div(img(src="CLiCKAR.png", height = 40), "submit!")),
                  
                  br(), br(), br(),
-                 p("3) Click ???Download??? button and get data files for Step 2."),
+                 p("3) Click 'Download' button and get data files for Step 2."),
                  # p("The downloded file contains four files as described below.", style = "font-family: 'times'; font-size: 10pt"),
                  # p("- demultiplexed read files (.fastq.gz).", style = "font-family: 'times'; font-size: 10pt"),
                  # p("- read counts of each sample (count_result.csv).", style = "font-family: 'times'; font-size: 10pt"),
@@ -68,11 +68,11 @@ shinyApp(
       tabPanel("Step 2", 
                
                sidebarPanel(
-                 useShinyjs(), #new!
+                 # useShinyjs(), #new!
                  p("Step 2 procedure", style = "font-family: 'Helvetica'; font-size: 16pt"),
                  
                  h4("[Required parameters]"),
-                 p("1) Browse and upload your ???demultiplexed_fastq.dat??? file downloded at Step 1 from your computer through the panel below."),
+                 p("1) Browse and upload your 'demultiplexed_fastq.dat' file downloded at Step 1 from your computer through the panel below."),
                  fileInput('datafile', 'Select demultiplexed_fastq.dat (.dat)',accept='.dat'),
                  
                  p("2) Select your target gene from the drop-down menu."),
@@ -92,15 +92,15 @@ shinyApp(
                               value = 10, min = 0, step = 1),
                  
                  br(),  br(), #br(),
-                 p("5) Click ???CLiCKAR submit!??? button."),
+                 p("5) Click 'CLiCKAR submit!' button."),
                  
                  actionButton("go2", div(img(src="CLiCKAR.png", height = 40), "submit!")),
                  
-                 p("6) Click ???Download??? button and get compressed data file containing four files."),
-                 # p("- ???count.xlsx??? file: the detail of mutation profiles in each sample.", style = "font-family: 'times'; font-size: 10pt"),
-                 # p("- ???indel_position.pdf???  file: the putative position of the DSB.", style = "font-family: 'times'; font-size: 10pt"),
-                 # p("- ???mutation_rate.csv???  file: the percentages of wild-, in-, or out-of-frame.", style = "font-family: 'times'; font-size: 10pt"),
-                 # p("- ???mutation_rate.pdf??? file: graphical report of ???muration_rate.csv???", style = "font-family: 'times'; font-size: 10pt"),
+                 p("6) Click 'Download' button and get compressed data file containing four files."),
+                 # p("- 'count.xlsx' file: the detail of mutation profiles in each sample.", style = "font-family: 'times'; font-size: 10pt"),
+                 # p("- 'indel_position.pdf'  file: the putative position of the DSB.", style = "font-family: 'times'; font-size: 10pt"),
+                 # p("- 'mutation_rate.csv'  file: the percentages of wild-, in-, or out-of-frame.", style = "font-family: 'times'; font-size: 10pt"),
+                 # p("- 'mutation_rate.pdf' file: graphical report of 'muration_rate.csv'", style = "font-family: 'times'; font-size: 10pt"),
                  downloadButton("CLiCKAR_calculated.zip", "Download")
                  
                  
@@ -127,11 +127,11 @@ shinyApp(
       tabPanel("Batch mode",
                
                sidebarPanel(
-                 useShinyjs(),
+                 #useShinyjs(),
                  
                  p("Batch mode procedure", style = "font-family: 'Helvetica'; font-size: 16pt"),
                  
-                 p("0) If necessary, download sample data files from ???get sample!??? button below."),
+                 p("0) If necessary, download sample data files from 'get sample!' button below."),
                  downloadButton("CLiCKAR_sample.zip", "get sample!"),
                  br(), br(), br(),
                  
@@ -160,11 +160,11 @@ shinyApp(
                               value = 10, min = 0, step = 1),
                  
                  br(),  br(), #br(),
-                 p("4) Click ???CLiCKAR submit!??? button."),
+                 p("4) Click 'CLiCKAR submit!' button."),
                  
                  actionButton("go3", div(img(src="CLiCKAR.png", height = 40), "submit!")),
                  
-                 p("5) Click ???Download??? button and get compressed data file containing four files."),
+                 p("5) Click 'Download' button and get compressed data file containing four files."),
                  downloadButton("batch_CLiCKAR_calculated.zip", "Download")
 
                ),
@@ -177,11 +177,11 @@ shinyApp(
       tabPanel("Usage tutorial",
                fluidPage(titlePanel("Hello CLiCKAR!"),
                          
-                         h4("1) Prepare your ???query table (.csv)???."),
+                         h4("1) Prepare your 'query table (.csv)'."),
                          img(src = "sample_qery_table.png", height = 144, width = 850),
                          #
                          br(), br(),
-                         p("A comma-separated values (csv) data sheet (???query_table.csv???; details in Table 2) 
+                         p("A comma-separated values (csv) data sheet ('query_table.csv'; details in Table 2) 
                            is needed to run CLiCKAR. Query table requires gene name (Gene), 
                            sample name for individual crispant (Sample_name), forward (FWD_primer) 
                            and reverse (REV_primer) primer sequences with custom barcoded sequence (underlined) 
@@ -191,7 +191,7 @@ shinyApp(
                            style = "font-family: 'times'; font-size: 12pt"),
                          
                          br(),br(),
-                         h4("2) Prepare your ???fastq file (.fastq or .fastq.gz)???."),
+                         h4("2) Prepare your 'fastq file (.fastq or .fastq.gz)'."),
                          
                          withTags({
                            div(class="body", checked=NA,
@@ -211,7 +211,7 @@ shinyApp(
                          h4("3) Run CLiCKAR in each step accordance with the instructions."),
                          
                          tags$b("Step 1 procedure", style = "font-family: 'times'; font-size: 12pt; padding-left: 2em"),
-                         p("0) If necessary, download sample data files from ???get sample!??? button below.",     style = "font-family: 'times'; font-size: 12pt; padding-left: 2em"),
+                         p("0) If necessary, download sample data files from 'get sample!' button below.",     style = "font-family: 'times'; font-size: 12pt; padding-left: 2em"),
                          div(downloadButton("CLiCKAR_sample2.zip", "get sample!"),                             style = "padding-left: 15em"),
                          
                          br(),
@@ -220,10 +220,10 @@ shinyApp(
                          p("1-2) Select your fastq file (.fastq or .fastq.gz).",                               style = "font-family: 'times'; font-size: 12pt; padding-left: 4em"),                         
                          
                          br(),
-                         p("2) Click ???CLiCKAR submit!??? button.",                                               style = "font-family: 'times'; font-size: 12pt; padding-left: 2em"),
+                         p("2) Click 'CLiCKAR submit!' button.",                                               style = "font-family: 'times'; font-size: 12pt; padding-left: 2em"),
                          
                          br(),
-                         p("3) Click ???Download??? button and get data files for Step 2.",                        style = "font-family: 'times'; font-size: 12pt; padding-left: 2em"),
+                         p("3) Click 'Download' button and get data files for Step 2.",                        style = "font-family: 'times'; font-size: 12pt; padding-left: 2em"),
                          p("The downloded file contains four files as described below.",                       style = "font-family: 'times'; font-size: 12pt; padding-left: 3em"),
                          p("- '.fastq.gz' file: demultiplexed read files.",                                          style = "font-family: 'times'; font-size: 10pt; padding-left: 4em"),
                          p("- 'count_result.csv' file: read counts of each sample.",                                 style = "font-family: 'times'; font-size: 10pt; padding-left: 4em"),
@@ -233,7 +233,7 @@ shinyApp(
                          br(),
                          tags$b("Step 2 procedure", style = "font-family: 'times'; font-size: 12pt; padding-left: 2em"),
                          br(),
-                         p("1) Browse your ???demultiplexed_fastq.dat??? file at Step 1 from your computer through the data upload panel.",      style = "font-family: 'times'; font-size: 12pt; padding-left: 2em"),
+                         p("1) Browse your 'demultiplexed_fastq.dat' file at Step 1 from your computer through the data upload panel.",      style = "font-family: 'times'; font-size: 12pt; padding-left: 2em"),
                          
                          br(),
                          p("2) Select your target gene from the drop-down menu.",                               style = "font-family: 'times'; font-size: 12pt; padding-left: 2em"),
@@ -245,21 +245,21 @@ shinyApp(
                          p("4) Set target window (bp) to identified mutations around the ddouble strand break (DSB) site.", style = "font-family: 'times'; font-size: 12pt; padding-left: 2em"),
                          
                          br(),
-                         p("5) Click ???CLiCKAR submit!??? button.",                                                 style = "font-family: 'times'; font-size: 12pt; padding-left: 2em"),
+                         p("5) Click 'CLiCKAR submit!' button.",                                                 style = "font-family: 'times'; font-size: 12pt; padding-left: 2em"),
                          
                          br(),
-                         p("6) Click ???Download??? button and get a data file containing four files below.",       style = "font-family: 'times'; font-size: 12pt; padding-left: 2em"),
+                         p("6) Click 'Download' button and get a data file containing four files below.",       style = "font-family: 'times'; font-size: 12pt; padding-left: 2em"),
                          p("- 'count.xlsx'        file: the detail of mutation profiles in each sample.",       style = "font-family: 'times'; font-size: 10pt; padding-left: 4em"),
                          p("- 'indel_position.pdf'file: the putative position of the DSB.",                     style = "font-family: 'times'; font-size: 10pt; padding-left: 4em"),
                          p("- 'mutation_rate.csv' file: the percentages of wild-, in-, or out-of-frame.",       style = "font-family: 'times'; font-size: 10pt; padding-left: 4em"),
-                         p("- 'mutation_rate.pdf' file: graphical report of ???muration_rate.csv???",               style = "font-family: 'times'; font-size: 10pt; padding-left: 4em")
+                         p("- 'mutation_rate.pdf' file: graphical report of 'muration_rate.csv'",               style = "font-family: 'times'; font-size: 10pt; padding-left: 4em")
                          
                          )
                
                          ),         
       tabPanel("Information",
                h5("How to cite:"),
-               p("Please refer to our manuscript ???CLiCKAR: a web tool for practical genotyping and evaluation of 
+               p("Please refer to our manuscript 'CLiCKAR: a web tool for practical genotyping and evaluation of 
                  CRISPR-Cas9-based knock-out phenotypes using multiplexed amplicon sequencing. Iida et al., in submission."),
                br(),
                h5("Version:"),
